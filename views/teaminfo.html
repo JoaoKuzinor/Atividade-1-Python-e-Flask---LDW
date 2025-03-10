@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container" style="background-color: #f0f0f0; border-radius: 8px">
+  <div class="row">
+    <div class="col-md-6 m-auto">
+      <a href="{{url_for('apiteams')}}" class="btn btn-dark">
+        << Todos os Times</a
+      ><br /><br />
+      <div class="card">
+        <div class="card-body m-auto">
+          <h3>{{tinfo.strTeam}}</h3>
+          <p>Ano: {{tinfo.intFormedYear}}</p>
+          <p>Descrição: {{tinfo.strTeamAlternate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

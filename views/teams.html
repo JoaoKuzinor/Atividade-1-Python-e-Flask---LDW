@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+    <h1>Informações do Time</h1>
+    <hr>
+
+    {% for k, v in team.items() %}
+    {{k}}: {{v}}<br>
+    {% endfor %}
+
+    <p>O time {{team['name']}} tem {{2025 - team['year']}} anos.</p>
+    
+    <br>
+    <br>
+
+    <p>Principais jogadores do elenco:</p>
+    <hr>
+     <ol>
+        {% for p in players: %}
+            <li>{{p}}</li>
+        {% endfor%}
+    </ol> 
+
+    <br>
+
+    <form action="{{url_for('teams')}}", method="POST">
+        <label for="player">Jogador:</label>
+        <input type="text" name="player">
+        <input type="submit" value="Cadastrar">
+    </form>
+
+{% endblock content %}
